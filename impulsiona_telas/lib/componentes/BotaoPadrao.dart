@@ -1,60 +1,47 @@
 import 'package:flutter/material.dart';
 
-class Botaopadrao extends StatefulWidget {
-  IconData icone;
-  String texto;
-  Botaopadrao({super.key, required this.icone, required this.texto});
+class Botaopadrao extends StatelessWidget {
+  final IconData icone;
+  final String texto;
+  final Color? cor; // opcional
 
-  @override
-  State<Botaopadrao> createState() => _BotaopadraoState();
-}
+  const Botaopadrao({
+    super.key,
+    required this.icone,
+    required this.texto,
+    this.cor, // não é required
+  });
 
-class _BotaopadraoState extends State<Botaopadrao> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, 0),
+      alignment: Alignment.center,
       child: Container(
-        width: 409,
+        width: double.infinity, // responsivo
         height: 45,
         decoration: BoxDecoration(
-          color: Color(0xFF2563EB),
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(16),
-            bottomRight: Radius.circular(16),
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
-          ),
-          shape: BoxShape.rectangle,
-          border: Border.all(color: Colors.transparent),
+          color: cor ?? const Color(0xFF2563EB), // cor padrão
+          borderRadius: BorderRadius.circular(16),
         ),
-        child: Align(
-          alignment: AlignmentDirectional(0, 0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 8, 0),
-                child: Icon(widget.icone, color: Colors.white, size: 24),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icone,
+              color: Colors.white,
+              size: 24,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              texto,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
               ),
-
-              Align(
-                alignment: AlignmentDirectional(0, 0),
-                child: Text(
-                  widget.texto,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    letterSpacing: 0.0,
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
-    ;
   }
 }

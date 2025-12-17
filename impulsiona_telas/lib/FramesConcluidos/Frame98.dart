@@ -3,7 +3,7 @@ import 'package:impulsiona_telas/componentes/BotaoPadrao.dart';
 import 'package:impulsiona_telas/componentes/textoWidget.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(home: MyApp(),) );
 }
 
 class SwitchExample extends StatefulWidget {

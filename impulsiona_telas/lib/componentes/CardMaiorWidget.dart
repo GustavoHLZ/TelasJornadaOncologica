@@ -27,9 +27,8 @@ class _CardMaiorWidgetState extends State<CardMaiorWidget> {
       child: Row(
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(115, 0, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
             child: Column(
-              mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),

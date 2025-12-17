@@ -5,12 +5,16 @@ import 'package:impulsiona_telas/componentes/textoWidget.dart';
 import '';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MaterialApp(home: MyWidget(),));
+}
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -63,3 +67,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

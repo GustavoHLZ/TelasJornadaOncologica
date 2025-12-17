@@ -5,7 +5,7 @@ class CardQuestionarioWidget extends StatefulWidget {
    String texto;
    IconData icone;
    String titulo;
-   CardQuestionarioWidget({super.key, required this.texto, required this.icone, required this.titulo});
+   CardQuestionarioWidget({super.key, required this.texto, required this.icone, required this.titulo, required bool temBotaoContinuar});
 
   @override
   State<CardQuestionarioWidget> createState() => _CardQuestionarioWidgetState();
